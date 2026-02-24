@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alasonatti Scavi: impresa specializzata in scavi, movimento terra, lavori forestali, sgombero neve e costruzione fognature a Pessinetto (TO). 4 generazioni di esperienza.">
+    <meta name="keywords" content="scavi, movimento terra, lavori forestali, fognature, acquedotti, sgombero neve, Pessinetto, Torino">
+    <meta name="author" content="Alasonatti Scavi">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Italian">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hatefulandre96.github.io/alasonatti-scavi/">
+    <meta property="og:title" content="Alasonatti Scavi | Movimento Terra e Lavori Forestali a Pessinetto">
+    <meta property="og:description" content="Impresa familiare da 4 generazioni specializzata in scavi, movimento terra, lavori forestali e opere civili a Pessinetto (TO)">
+    <meta property="og:locale" content="it_IT">
+    
+    <!-- Twitter Card -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Alasonatti Scavi">
+    <meta property="twitter:description" content="Scavi, movimento terra e lavori forestali a Pessinetto">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://hatefulandre96.github.io/alasonatti-scavi/">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            orange: '#FF6600',
+                            blue: '#002D62',
+                            black: '#0a0a0a',
+                            gray: '#374151',
+                            light: '#F3F4F6'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Montserrat', 'sans-serif'],
+                        body: ['Open Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Alasonatti Scavi",
+      "description": "Impresa specializzata in scavi, movimento terra, lavori forestali e costruzione fognature",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Fraz. Losa 4",
+        "addressLocality": "Pessinetto",
+        "postalCode": "10070",
+        "addressRegion": "TO",
+        "addressCountry": "IT"
+      },
+      "telephone": "+39-0123-504231",
+      "email": "info@alasonattiscavi.it",
+      "url": "https://hatefulandre96.github.io/alasonatti-scavi/",
+      "priceRange": "$$$"
+    }
+    </script>
+
+    <style>
+        html { scroll-behavior: smooth; }
+        .hero-overlay {
+            background: linear-gradient(to right, rgba(0, 45, 98, 0.8) 0%, rgba(10, 10, 10, 0.6) 100%);
+        }
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="font-body text-gray-800 bg-brand-light">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-brand-black/95 backdrop-blur-sm text-white shadow-lg transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer py-2" onclick="window.scrollTo(0,0)">
+                    <h1 class="text-2xl font-bold text-brand-orange">Alasonatti Scavi</h1>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#chi-siamo" class="hover:text-brand-orange transition font-semibold">Chi Siamo</a>
+                    <a href="#servizi" class="hover:text-brand-orange transition font-semibold">Servizi</a>
+                    <a href="#gallery" class="hover:text-brand-orange transition font-semibold">Lavori</a>
+                    <a href="#contatti" class="bg-brand-orange text-white px-6 py-2 rounded-md font-bold hover:bg-orange-500 transition shadow-md">Preventivo</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-white hover:text-brand-orange focus:outline-none" aria-label="Toggle menu">
+                        <i data-lucide="menu" class="w-8 h-8"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-black border-t border-gray-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
+                <a href="#chi-siamo" class="block px-3 py-2 text-base font-medium hover:text-brand-orange mobile-link">Chi Siamo</a>
+                <a href="#servizi" class="block px-3 py-2 text-base font-medium hover:text-brand-orange mobile-link">Servizi</a>
+                <a href="#gallery" class="block px-3 py-2 text-base font-medium hover:text-brand-orange mobile-link">Lavori</a>
+                <a href="#contatti" class="block px-3 py-2 text-base font-medium text-brand-orange mobile-link">Contatti</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center pt-24" aria-label="Hero section">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1621251919864-16a3e7db0160?q=80&w=2070&auto=format&fit=crop" 
+                 alt="Escavatore al lavoro nella natura" 
+                 class="w-full h-full object-cover"
+                 loading="lazy"
+                 width="2070"
+                 height="1380">
+            <div class="absolute inset-0 hero-overlay"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto fade-in">
+            <h1 class="font-heading font-800 text-4xl sm:text-5xl md:text-6xl text-white mb-6 uppercase tracking-tight leading-tight">
+                L'esperienza di 4 generazioni,<br>
+                <span class="text-brand-orange">al servizio del territorio.</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-gray-200 mb-10 max-w-3xl mx-auto font-light leading-relaxed">
+                Dal movimento terra alle opere forestali, dagli acquedotti allo sgombero neve. Lavoriamo ogni giorno con passione e competenza.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="tel:+390123504231" class="bg-brand-orange text-white font-bold text-lg px-8 py-4 rounded hover:bg-orange-500 transition transform hover:-translate-y-1 shadow-lg flex items-center justify-center gap-2">
+                    <i data-lucide="phone-call" class="w-5 h-5"></i> 0123 504231
+                </a>
+                <a href="#servizi" class="bg-brand-blue border border-brand-blue text-white font-bold text-lg px-8 py-4 rounded hover:bg-blue-800 transition transform hover:-translate-y-1 flex items-center justify-center gap-2 shadow-lg">
+                    Scopri i Servizi
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chi Siamo Section -->
+    <section id="chi-siamo" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="font-heading font-800 text-3xl md:text-4xl text-brand-blue mb-6">La nostra Storia</h2>
+                    <div class="w-20 h-2 bg-brand-orange mb-6"></div>
+                    <p class="text-gray-600 mb-4 text-lg leading-relaxed">
+                        Alasonatti Scavi è un'azienda a <strong>gestione familiare giunta alla sua quarta generazione</strong>. Situata a Pessinetto (Fraz. Losa), unisce l'antica passione per il territorio alle competenze tecniche moderne.
+                    </p>
+                    <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+                        Il nostro obiettivo è <strong>lavorare bene</strong>. Eseguiamo ogni intervento con massima cura e precisione, garantendo risultati duraturi e sicuri con rispetto dell'ambiente.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-brand-blue font-semibold">
+                            <i data-lucide="history" class="text-brand-orange w-6 h-6"></i> 4 generazioni di esperienza
+                        </li>
+                        <li class="flex items-center gap-3 text-brand-blue font-semibold">
+                            <i data-lucide="check-circle-2" class="text-brand-orange w-6 h-6"></i> Massima cura e precisione
+                        </li>
+                        <li class="flex items-center gap-3 text-brand-blue font-semibold">
+                            <i data-lucide="leaf" class="text-brand-orange w-6 h-6"></i> Rispetto dell'ambiente
+                        </li>
+                    </ul>
+                </div>
+                <div class="relative">
+                    <div class="absolute inset-0 bg-brand-orange transform translate-x-4 translate-y-4 rounded-lg"></div>
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2026&auto=format&fit=crop" 
+                         alt="Macchinari e natura" 
+                         class="relative z-10 rounded-lg shadow-xl w-full h-auto object-cover"
+                         loading="lazy"
+                         width="2026"
+                         height="1350"
+                         style="max-height: 500px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servizi Section -->
+    <section id="servizi" class="py-20 bg-brand-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-heading font-800 text-3xl md:text-4xl text-brand-blue mb-4">Aree di Intervento</h2>
+                <div class="w-20 h-2 bg-brand-orange mx-auto mb-4"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">Interventi specializzati per l'ambiente, l'urbanistica e le opere civili.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 border-b-4 border-transparent hover:border-brand-orange group">
+                    <div class="bg-brand-light w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:bg-brand-orange group-hover:text-white transition text-brand-blue">
+                        <i data-lucide="snowflake" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl mb-3 text-brand-blue">Sgombero Neve</h3>
+                    <p class="text-gray-600">Servizio tempestivo di pulizia strade e viabilità dalla neve durante l'inverno.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 border-b-4 border-transparent hover:border-brand-orange group">
+                    <div class="bg-brand-light w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:bg-brand-orange group-hover:text-white transition text-brand-blue">
+                        <i data-lucide="droplets" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl mb-3 text-brand-blue">Acquedotti e Fognature</h3>
+                    <p class="text-gray-600">Realizzazione, posa e manutenzione di reti idriche e fognarie.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 border-b-4 border-transparent hover:border-brand-orange group">
+                    <div class="bg-brand-light w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:bg-brand-orange group-hover:text-white transition text-brand-blue">
+                        <i data-lucide="waves" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl mb-3 text-brand-blue">Disalvei e Idraulica</h3>
+                    <p class="text-gray-600">Sistemazione idrogeologica e prevenzione rischi con opere strutturali.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 border-b-4 border-transparent hover:border-brand-orange group">
+                    <div class="bg-brand-light w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:bg-brand-orange group-hover:text-white transition text-brand-blue">
+                        <i data-lucide="map" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl mb-3 text-brand-blue">Strade e Viabilità</h3>
+                    <p class="text-gray-600">Costruzione di strade montane, viabilità rurale e asfaltature.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 border-b-4 border-transparent hover:border-brand-orange group">
+                    <div class="bg-brand-light w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:bg-brand-orange group-hover:text-white transition text-brand-blue">
+                        <i data-lucide="tree-pine" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl mb-3 text-brand-blue">Lavori Forestali</h3>
+                    <p class="text-gray-600">Gestione patrimonio boschivo, pulizia terreni e riqualificazione sostenibile.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 border-b-4 border-transparent hover:border-brand-orange group">
+                    <div class="bg-brand-light w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:bg-brand-orange group-hover:text-white transition text-brand-blue">
+                        <i data-lucide="building-2" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl mb-3 text-brand-blue">Realizzazione Fabbricati</h3>
+                    <p class="text-gray-600">Costruzione e ristrutturazione di fabbricati artigianali e civili.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="py-20 bg-brand-blue text-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-heading font-800 text-3xl md:text-4xl mb-4">I Nostri Lavori</h2>
+                <div class="w-20 h-2 bg-brand-orange mx-auto mb-4"></div>
+                <p class="text-gray-200 max-w-2xl mx-auto">Scopri i progetti realizzati. Segui Instagram per vedere tutti i cantieri in tempo reale.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                <div class="group relative overflow-hidden rounded-lg shadow-lg aspect-square">
+                    <img src="https://images.unsplash.com/photo-1581092162562-40038f66dfa4?q=80&w=1470&auto=format&fit=crop" 
+                         alt="Escavatore in cantiere" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+                         loading="lazy">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                        <p class="text-white font-bold text-center">Scavi e Movimento Terra</p>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-lg shadow-lg aspect-square">
+                    <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=1470&auto=format&fit=crop" 
+                         alt="Lavori stradali" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+                         loading="lazy">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                        <p class="text-white font-bold text-center">Costruzione Strade</p>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-lg shadow-lg aspect-square">
+                    <img src="https://images.unsplash.com/photo-1581091918056-0c4c3acd3789?q=80&w=1470&auto=format&fit=crop" 
+                         alt="Lavori forestali" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+                         loading="lazy">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                        <p class="text-white font-bold text-center">Lavori Forestali</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <a href="https://instagram.com/alasonattiscavi" target="_blank" rel="noopener noreferrer" 
+                   class="inline-flex bg-brand-orange text-white font-bold text-lg px-8 py-4 rounded-full hover:bg-orange-500 transition transform hover:-translate-y-1 shadow-lg items-center gap-3">
+                    <i data-lucide="instagram" class="w-6 h-6"></i> Vai a Instagram
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contatti -->
+    <section id="contatti" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                
+                <div>
+                    <h2 class="font-heading font-800 text-3xl md:text-4xl text-brand-blue mb-6">Contattaci</h2>
+                    <div class="w-20 h-2 bg-brand-orange mb-8"></div>
+                    <p class="text-gray-600 mb-10 text-lg">
+                        Siamo disponibili per consulenze, sopralluoghi gratuiti e preventivi per i tuoi progetti.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4 p-4 rounded-lg bg-brand-light border-l-4 border-brand-orange">
+                            <div class="text-brand-orange">
+                                <i data-lucide="map-pin" class="w-8 h-8"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-brand-blue">Sede</h4>
+                                <p class="text-gray-600">Fraz. Losa 4<br>10070 Pessinetto (TO)</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-lg bg-brand-light border-l-4 border-brand-orange">
+                            <div class="text-brand-orange">
+                                <i data-lucide="phone" class="w-8 h-8"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-brand-blue">Telefono</h4>
+                                <p class="text-gray-600"><a href="tel:+390123504231" class="font-semibold hover:text-brand-orange">0123 504231</a></p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-lg bg-brand-light border-l-4 border-brand-orange">
+                            <div class="text-brand-orange">
+                                <i data-lucide="mail" class="w-8 h-8"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-brand-blue">Email</h4>
+                                <p class="text-gray-600"><a href="mailto:info@alasonattiscavi.it" class="hover:text-brand-orange">info@alasonattiscavi.it</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-brand-blue p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold text-white mb-6 font-heading">Richiedi Preventivo</h3>
+                    
+                    <form action="https://formsubmit.co/info@alasonattiscavi.it" method="POST">
+                        <input type="hidden" name="_subject" value="Nuova richiesta dal sito web">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://hatefulandre96.github.io/alasonatti-scavi/">
+                        
+                        <div class="mb-4">
+                            <label for="name" class="block text-sm font-semibold text-gray-200 mb-2">Nome / Azienda</label>
+                            <input type="text" id="name" name="nome" class="w-full px-4 py-3 rounded-md border-0 focus:outline-none focus:ring-2 focus:ring-brand-orange text-gray-800" required placeholder="Mario Rossi">
+                        </div>
+                        <div class="mb-4">
+                            <label for="phone" class="block text-sm font-semibold text-gray-200 mb-2">Telefono</label>
+                            <input type="tel" id="phone" name="telefono" class="w-full px-4 py-3 rounded-md border-0 focus:outline-none focus:ring-2 focus:ring-brand-orange text-gray-800" required placeholder="Il tuo numero">
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-sm font-semibold text-gray-200 mb-2">Descrivi il tuo progetto</label>
+                            <textarea id="message" name="messaggio" rows="4" class="w-full px-4 py-3 rounded-md border-0 focus:outline-none focus:ring-2 focus:ring-brand-orange text-gray-800" required placeholder="Scrivi di cosa hai bisogno..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-brand-orange text-white font-bold py-4 rounded-md hover:bg-orange-500 transition flex justify-center items-center gap-2 shadow-md">
+                            <i data-lucide="send" class="w-5 h-5"></i> Invia Richiesta
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-black text-gray-400 py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-white font-bold text-xl mb-4 font-heading">Alasonatti Scavi</h3>
+                    <p class="text-sm mb-4 leading-relaxed">
+                        Azienda familiare da 4 generazioni specializzata in scavi, movimento terra e lavori forestali a Pessinetto (TO).
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">Link Rapidi</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#chi-siamo" class="hover:text-brand-orange transition">Chi Siamo</a></li>
+                        <li><a href="#servizi" class="hover:text-brand-orange transition">Servizi</a></li>
+                        <li><a href="#gallery" class="hover:text-brand-orange transition">Lavori</a></li>
+                        <li><a href="#contatti" class="hover:text-brand-orange transition">Contatti</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">Seguici</h4>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="https://instagram.com/alasonattiscavi" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-orange hover:text-white transition">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-orange hover:text-white transition">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                    <p class="text-xs text-gray-600">P.IVA: 04872310018</p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-sm">
+                <p>&copy; 2026 Alasonatti Scavi. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+</body>
+</html>
